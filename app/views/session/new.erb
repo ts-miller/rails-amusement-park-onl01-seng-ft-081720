@@ -1,0 +1,12 @@
+
+
+<%= form_with url: session_path, scope: "user" do |f| %>
+
+    <%= f.label :name, "Your name:" %><br>
+    <%= f.collection_select(:id, User.all, :id, :name, {}, {id: :user_name}) %><br>
+
+    <%= f.label :password, "Your password:" %><br>
+    <%= f.password_field :password, id: :user_password %><br>
+
+    <%= f.submit "Sign In" %>
+<% end %>
